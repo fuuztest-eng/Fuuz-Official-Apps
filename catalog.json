@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "id": "com.fuuz.production-dashboard",
+      "name": "Production Dashboard",
+      "publisher": "Fuuz",
+      "version": "2.4.1",
+      "description": "Real-time production KPIs and OEE.",
+      "iconUrl": "https://placehold.co/128x128?text=Dashboard"
+    },
+    {
+      "id": "com.fuuz.downtime-tracker",
+      "name": "Downtime Tracker",
+      "publisher": "Fuuz",
+      "version": "1.2.0",
+      "description": "Log and analyze machine downtime events.",
+      "iconUrl": "https://placehold.co/128x128?text=Downtime"
+    }
+  ]
+}
