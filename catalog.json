@@ -7,7 +7,8 @@
       "publisher": "Fuuz",
       "version": "2.4.1",
       "description": "Real-time production KPIs and OEE.",
-      "iconUrl": "https://placehold.co/128x128?text=Dashboard"
+      "iconUrl": "https://placehold.co/128x128?text=Dashboard",
+      "packageUrl": "https://github.com/fuuztest-eng/Fuuz-Official-Apps/releases/download/0.0.9/App.Package@0.0.9.fuuz"
     },
     {
       "id": "com.fuuz.downtime-tracker",
