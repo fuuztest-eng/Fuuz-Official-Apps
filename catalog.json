@@ -3,12 +3,14 @@
   "apps": [
     {
       "id": "com.fuuz.production-dashboard",
-      "name": "Production Dashboard",
+      "name": "Production Metrics",
       "publisher": "Fuuz",
-      "version": "2.4.1",
-      "description": "Real-time production KPIs and OEE.",
-      "iconUrl": "https://placehold.co/128x128?text=Dashboard",
-      "packageUrl": "https://github.com/fuuztest-eng/Fuuz-Official-Apps/releases/download/0.0.9/App.Package@0.0.9.fuuz"
+      "version": "1.0.0",
+      "type": "application",
+      "description": "Some production data",
+      "iconUrl": "https://placehold.co/128x128?text=Production",
+      "releaseTag": "v1.0.0",
+      "assetName": "Production.Data.Package@0.0.1.fuuz"
     },
     {
       "id": "com.fuuz.downtime-tracker",
