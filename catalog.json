@@ -19,6 +19,23 @@
       "version": "1.2.0",
       "description": "Log and analyze machine downtime events.",
       "iconUrl": "https://placehold.co/128x128?text=Downtime"
+    },
+    {
+      "id": "com.fuuz.production-data",
+      "name": "Production Data",
+      "publisher": "Fuuz",
+      "version": "1.2.0",
+      "type": "application",
+      "category": "MES",
+      "tags": [
+        "oee",
+        "kpi",
+        "sad"
+      ],
+      "description": "",
+      "releaseTag": "v1.2.0",
+      "assetName": "production-data-1.2.0.fuuz",
+      "sha256": "253bb73c141fe18a0079d45e97d34b683f0e86a52fe3f0fff4618ffb60eb7e8a"
     }
   ]
 }
