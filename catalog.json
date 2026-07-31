@@ -9,7 +9,7 @@
       "type": "application",
       "description": "Some production data",
       "iconUrl": "https://placehold.co/128x128?text=Production",
-      "releaseTag": "v1.0.0",
+      "releaseTag": "v1.1.0",
       "assetName": "Production.Data.Package@0.0.2.fuuz"
     },
     {
