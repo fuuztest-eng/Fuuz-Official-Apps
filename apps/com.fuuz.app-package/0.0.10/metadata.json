@@ -1,0 +1,14 @@
+{
+  "id": "com.fuuz.app-package",
+  "name": "App Package",
+  "publisher": "Fuuz",
+  "version": "0.0.10",
+  "type": "application",
+  "category": "Miscellaneous",
+  "tags": [],
+  "description": "",
+  "packageDefinitionVersionId": "cmsq5yzq3000q356uqm1nodcp",
+  "releaseTag": "v0.0.10",
+  "assetName": "app-package-0.0.10.fuuz",
+  "sha256": "ddf140634a6d758c69126ea9494a3f39f321d588aa81e1043c4a0ab9d4d57b88"
+}
