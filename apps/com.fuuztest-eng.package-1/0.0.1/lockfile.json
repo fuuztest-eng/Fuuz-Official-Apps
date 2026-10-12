@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "app-components/dataFlows/vm2-error-test@0.0.7.json",
+      "sha256": "e4c895080301f9a6afab4eb61d331ea466dbb5a2ad22a2d3f2fd1fa8ecb64bcb"
+    },
+    {
+      "path": "collections/ModuleGroup/system.json",
+      "sha256": "52716c8c583c304b09afe371f139ce9eaa802e496c2461a9483c2976777b5f70"
+    },
+    {
+      "path": "collections/Module/testing.json",
+      "sha256": "16c022a79a871f8c8468c4463bd212414e6cd0fa4436b78fb51d9161bf2e067b"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "69af549dcfcc88fa1801316c2b3432c1ef33a897d778a5748de39f95b0d4b8e2"
+    },
+    {
+      "path": "definition.json",
+      "sha256": "e759a0bd64b0a35f71afa4a4404562aa988663411b3ad3a906cca66f7dd0d9e9"
+    }
+  ]
+}

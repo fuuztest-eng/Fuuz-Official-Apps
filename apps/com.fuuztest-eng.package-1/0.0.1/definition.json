@@ -1,0 +1,152 @@
+{
+  "packageDefinition": {
+    "name": "Package 1"
+  },
+  "packageDefinitionSelections": [
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "substitutesDataFlowId"
+        },
+        {
+          "name": "dataFlowTypeId"
+        },
+        {
+          "name": "logLevelId"
+        },
+        {
+          "name": "mcpToolConfiguration.enabled"
+        },
+        {
+          "name": "mcpToolConfiguration.inputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.outputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.readOnly"
+        },
+        {
+          "name": "mcpToolConfiguration.destructive"
+        },
+        {
+          "name": "mcpToolConfiguration.idempotent"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv4jzbso000r356s5ywcwnbv",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ]
+      },
+      "modelName": "DataFlow",
+      "packageDefinitionVersionId": "cmv4jzbly000q356sqvuufglk",
+      "selected": [
+        {
+          "id": "vm2ErrorTest",
+          "label": "vm2 error test"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "moduleGroupId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv4jzbso000s356spgafhk35",
+      "metadata": {
+        "labelField": "name"
+      },
+      "modelName": "Module",
+      "packageDefinitionVersionId": "cmv4jzbly000q356sqvuufglk",
+      "selected": [
+        {
+          "id": "testing",
+          "label": "Testing"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "icon"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv4jzbso000t356sr907cq93",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": []
+      },
+      "modelName": "ModuleGroup",
+      "packageDefinitionVersionId": "cmv4jzbly000q356sqvuufglk",
+      "selected": [
+        {
+          "id": "system",
+          "label": "System"
+        }
+      ]
+    }
+  ],
+  "packageDefinitionVersion": {
+    "exportedFileId": null,
+    "id": "cmv4jzbly000q356sqvuufglk",
+    "packageDefinitionId": "package1",
+    "version": "0.0.1"
+  }
+}

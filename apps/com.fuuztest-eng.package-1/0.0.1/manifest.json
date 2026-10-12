@@ -1,0 +1,45 @@
+{
+  "applicationPublisherId": null,
+  "assets": [],
+  "catalog": {
+    "assetName": "package-1-0.0.1.fuuz",
+    "category": "Miscellaneous",
+    "description": "",
+    "id": "com.fuuztest-eng.package-1",
+    "name": "Package 1",
+    "publisher": "fuuztest-eng",
+    "releaseTag": "com.fuuztest-eng.package-1@0.0.1",
+    "sha256": "27257c7b0d3c4d745df380401aa2bfa9549eb1e13c479b668e3704b627cfaaba",
+    "tags": [],
+    "type": "application",
+    "version": "0.0.1"
+  },
+  "collections": [
+    {
+      "api": "application",
+      "modelName": "ModuleGroup"
+    },
+    {
+      "api": "application",
+      "modelName": "Module"
+    }
+  ],
+  "components": {
+    "dataFlows": [
+      "vm2-error-test@0.0.7"
+    ]
+  },
+  "dependencies": {},
+  "enterpriseId": "local",
+  "environmentId": "build",
+  "name": "Package 1",
+  "platformVersion": "2026.9.1",
+  "repoLayoutVersion": 1,
+  "requiredSecrets": [],
+  "source": {
+    "ref": "main",
+    "repo": "fuuztest-eng/Fuuz-Official-Apps"
+  },
+  "specVersion": "2.0.0",
+  "version": "0.0.1"
+}

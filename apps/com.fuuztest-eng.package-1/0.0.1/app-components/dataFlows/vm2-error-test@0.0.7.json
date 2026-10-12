@@ -1,0 +1,438 @@
+{
+  "header": {
+    "_customFields": {
+      "_externalId": null
+    },
+    "active": true,
+    "dataFlowTypeId": "System",
+    "description": "",
+    "id": "vm2ErrorTest",
+    "logLevelId": "Info",
+    "mcpToolConfiguration": null,
+    "moduleId": "testing",
+    "name": "vm2 error test",
+    "substitutesDataFlowId": null
+  },
+  "version": {
+    "dataFlowId": "vm2ErrorTest",
+    "description": "",
+    "diagram": {
+      "gridSize": 5,
+      "id": "cmtvet5t001dw077514uogzr1",
+      "layers": [
+        {
+          "id": "0eb3e4d6-f444-42ba-b344-26de5d2dce2e",
+          "isSvg": true,
+          "models": {
+            "3433be41-1518-4605-87fa-64d8e842ea95": {
+              "curvyness": 50,
+              "id": "3433be41-1518-4605-87fa-64d8e842ea95",
+              "labels": [],
+              "points": [
+                {
+                  "id": "74b3ee09-afb3-4db7-9d42-37d67351f39a",
+                  "type": "point",
+                  "x": 204.01,
+                  "y": 224.53
+                },
+                {
+                  "id": "f8c33414-9d85-4739-8b1f-285c15b18e2b",
+                  "type": "point",
+                  "x": 284.63,
+                  "y": 224.53
+                }
+              ],
+              "source": "11f3bfa5-e471-40ae-a043-a38165133260",
+              "sourcePort": "cmtvenua600si356syjnuc4qe",
+              "target": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+              "targetPort": "cmtvenua600sw356sybb92biz",
+              "type": "default",
+              "width": 3
+            },
+            "4aed4cf1-c631-4a77-8a62-38af9f002848": {
+              "curvyness": 50,
+              "id": "4aed4cf1-c631-4a77-8a62-38af9f002848",
+              "labels": [],
+              "points": [
+                {
+                  "id": "d1dc2f14-0bd5-4fb0-8691-941d25fdd885",
+                  "type": "point",
+                  "x": 439.01,
+                  "y": 224.53
+                },
+                {
+                  "id": "c9ccf9f6-ad1c-4119-99e1-740ec9562b2e",
+                  "type": "point",
+                  "x": 519.63,
+                  "y": 224.53
+                }
+              ],
+              "source": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+              "sourcePort": "cmtvenua600sy356srf8uorp6",
+              "target": "82a835cf-b163-4e2f-b141-869ce7413865",
+              "targetPort": "cmtvenua600so356ssphk23kg",
+              "type": "default",
+              "width": 3
+            },
+            "eca8e7f0-9e56-4f53-9a8a-effe5d9c0b12": {
+              "curvyness": 50,
+              "id": "eca8e7f0-9e56-4f53-9a8a-effe5d9c0b12",
+              "labels": [],
+              "points": [
+                {
+                  "id": "5f36e14c-c214-40c3-a58f-11d8a7e80038",
+                  "type": "point",
+                  "x": 204.01,
+                  "y": 89.53
+                },
+                {
+                  "id": "6c0de2d2-6b05-4eb3-a2a6-0384d7aa02cc",
+                  "type": "point",
+                  "x": 284.63,
+                  "y": 89.53
+                }
+              ],
+              "source": "8b37242c-935c-49a3-b77f-c2e196899ec9",
+              "sourcePort": "cmtvenua600t2356s0bv638pb",
+              "target": "7f1cd7c3-cafc-4622-b482-791e3fe53210",
+              "targetPort": "cmtvenua600s4356spxa3wolt",
+              "type": "default",
+              "width": 3
+            }
+          },
+          "transformed": true,
+          "type": "diagram-links"
+        },
+        {
+          "id": "a518e568-f77b-4056-84ba-8a409b7c6ca5",
+          "isSvg": false,
+          "models": {
+            "11f3bfa5-e471-40ae-a043-a38165133260": {
+              "data": {
+                "nextNodes": [
+                  "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772"
+                ]
+              },
+              "debug": {},
+              "id": "11f3bfa5-e471-40ae-a043-a38165133260",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Request",
+              "ports": [
+                {
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmtvenua600si356syjnuc4qe",
+                  "in": false,
+                  "links": [
+                    "3433be41-1518-4605-87fa-64d8e842ea95"
+                  ],
+                  "name": "cmtvenua600sj356sblw3pvck",
+                  "parentNode": "11f3bfa5-e471-40ae-a043-a38165133260",
+                  "type": "default",
+                  "x": 196.19,
+                  "y": 216.72
+                }
+              ],
+              "selected": false,
+              "type": "request",
+              "x": 50,
+              "y": 185
+            },
+            "7f1cd7c3-cafc-4622-b482-791e3fe53210": {
+              "data": {
+                "nextNodes": [],
+                "transform": "return await $executeFlow('vm2ErrorTest', $);"
+              },
+              "debug": {},
+              "id": "7f1cd7c3-cafc-4622-b482-791e3fe53210",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "JavaScript",
+              "ports": [
+                {
+                  "id": "cmtvenua600s4356spxa3wolt",
+                  "in": true,
+                  "links": [
+                    "eca8e7f0-9e56-4f53-9a8a-effe5d9c0b12"
+                  ],
+                  "name": "cmtvenua600s5356s0xsodo4f",
+                  "parentNode": "7f1cd7c3-cafc-4622-b482-791e3fe53210",
+                  "type": "default",
+                  "x": 276.82,
+                  "y": 81.72
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmtvenua600s6356s7np7duab",
+                  "in": false,
+                  "links": [],
+                  "name": "cmtvenua600s7356ssoui4xdy",
+                  "parentNode": "7f1cd7c3-cafc-4622-b482-791e3fe53210",
+                  "type": "default",
+                  "x": 431.19,
+                  "y": 81.72
+                }
+              ],
+              "selected": false,
+              "type": "javascriptTransform",
+              "x": 285,
+              "y": 50
+            },
+            "82a835cf-b163-4e2f-b141-869ce7413865": {
+              "data": {
+                "nextNodes": [],
+                "responseTransform": "$"
+              },
+              "debug": {},
+              "id": "82a835cf-b163-4e2f-b141-869ce7413865",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Response",
+              "ports": [
+                {
+                  "fieldLabel": "Response",
+                  "id": "cmtvenua600so356ssphk23kg",
+                  "in": true,
+                  "links": [
+                    "4aed4cf1-c631-4a77-8a62-38af9f002848"
+                  ],
+                  "name": "cmtvenua600sp356sum4agw0x",
+                  "parentNode": "82a835cf-b163-4e2f-b141-869ce7413865",
+                  "type": "default",
+                  "x": 511.82,
+                  "y": 216.72
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmtvenua600sq356so6n1tmqp",
+                  "in": false,
+                  "links": [],
+                  "name": "cmtvenua600sr356sl7pzn325",
+                  "parentNode": "82a835cf-b163-4e2f-b141-869ce7413865",
+                  "type": "default",
+                  "x": 666.19,
+                  "y": 216.72
+                }
+              ],
+              "selected": false,
+              "type": "response",
+              "x": 520,
+              "y": 185
+            },
+            "8b37242c-935c-49a3-b77f-c2e196899ec9": {
+              "data": {
+                "context": {},
+                "nextNodes": [
+                  "7f1cd7c3-cafc-4622-b482-791e3fe53210"
+                ],
+                "payload": {
+                  "test": 123
+                }
+              },
+              "debug": {},
+              "id": "8b37242c-935c-49a3-b77f-c2e196899ec9",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Source",
+              "ports": [
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmtvenua600t2356s0bv638pb",
+                  "in": false,
+                  "links": [
+                    "eca8e7f0-9e56-4f53-9a8a-effe5d9c0b12"
+                  ],
+                  "name": "cmtvenua600t3356skxo3nrt5",
+                  "parentNode": "8b37242c-935c-49a3-b77f-c2e196899ec9",
+                  "type": "default",
+                  "x": 196.19,
+                  "y": 81.72
+                }
+              ],
+              "selected": false,
+              "type": "debugSource",
+              "x": 50,
+              "y": 50
+            },
+            "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772": {
+              "data": {
+                "nextNodes": [
+                  "82a835cf-b163-4e2f-b141-869ce7413865"
+                ],
+                "transform": "throw new Error('Detailed error message')"
+              },
+              "debug": {},
+              "id": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "JavaScript",
+              "ports": [
+                {
+                  "id": "cmtvenua600sw356sybb92biz",
+                  "in": true,
+                  "links": [
+                    "3433be41-1518-4605-87fa-64d8e842ea95"
+                  ],
+                  "name": "cmtvenua600sx356s5c8ztuna",
+                  "parentNode": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+                  "type": "default",
+                  "x": 276.82,
+                  "y": 216.72
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmtvenua600sy356srf8uorp6",
+                  "in": false,
+                  "links": [
+                    "4aed4cf1-c631-4a77-8a62-38af9f002848"
+                  ],
+                  "name": "cmtvenua600sz356sxpjwfq4y",
+                  "parentNode": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+                  "type": "default",
+                  "x": 431.19,
+                  "y": 216.72
+                }
+              ],
+              "selected": true,
+              "type": "javascriptTransform",
+              "x": 285,
+              "y": 185
+            }
+          },
+          "transformed": true,
+          "type": "diagram-nodes"
+        }
+      ],
+      "name": "vm2 error test",
+      "offsetX": 295,
+      "offsetY": 327,
+      "type": "System",
+      "version": "0.0.7",
+      "walkthrough": {
+        "steps": []
+      },
+      "zoom": 100
+    },
+    "flow": {
+      "id": "cmtvet5t001dw077514uogzr1",
+      "name": "vm2 error test",
+      "nodes": [
+        {
+          "data": {
+            "nextNodes": [],
+            "transform": "return await $executeFlow('vm2ErrorTest', $);"
+          },
+          "debug": {},
+          "id": "7f1cd7c3-cafc-4622-b482-791e3fe53210",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "JavaScript",
+          "type": "javascriptTransform"
+        },
+        {
+          "data": {
+            "nextNodes": [
+              "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772"
+            ]
+          },
+          "debug": {},
+          "id": "11f3bfa5-e471-40ae-a043-a38165133260",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Request",
+          "type": "request"
+        },
+        {
+          "data": {
+            "nextNodes": [],
+            "responseTransform": "$"
+          },
+          "debug": {},
+          "id": "82a835cf-b163-4e2f-b141-869ce7413865",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Response",
+          "type": "response"
+        },
+        {
+          "data": {
+            "nextNodes": [
+              "82a835cf-b163-4e2f-b141-869ce7413865"
+            ],
+            "transform": "throw new Error('Detailed error message')"
+          },
+          "debug": {},
+          "id": "c3ed71db-bdaa-4a09-bcd4-ce4b26c32772",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "JavaScript",
+          "type": "javascriptTransform"
+        }
+      ],
+      "type": "System",
+      "version": "0.0.7"
+    },
+    "id": "cmtvet5t001dw077514uogzr1",
+    "number": "0.0.7"
+  }
+}
