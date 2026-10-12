@@ -1,0 +1,45 @@
+{
+  "applicationPublisherId": null,
+  "assets": [],
+  "catalog": {
+    "assetName": "business-0.0.1.fuuz",
+    "category": "Miscellaneous",
+    "description": "",
+    "id": "com.fuuztest-eng.business",
+    "name": "Business",
+    "publisher": "fuuztest-eng",
+    "releaseTag": "com.fuuztest-eng.business@0.0.1",
+    "sha256": "e42eb18b325a1d8fea74e9f36f8a3c68edfc602279cc75db51fb9a68483619cb",
+    "tags": [],
+    "type": "application",
+    "version": "0.0.1"
+  },
+  "collections": [
+    {
+      "api": "application",
+      "modelName": "ModuleGroup"
+    },
+    {
+      "api": "application",
+      "modelName": "Module"
+    }
+  ],
+  "components": {
+    "dataFlows": [
+      "btc-ingest@0.0.10"
+    ]
+  },
+  "dependencies": {},
+  "enterpriseId": "local",
+  "environmentId": "build",
+  "name": "Business",
+  "platformVersion": "2026.9.1",
+  "repoLayoutVersion": 1,
+  "requiredSecrets": [],
+  "source": {
+    "ref": "main",
+    "repo": "fuuztest-eng/Fuuz-Official-Apps"
+  },
+  "specVersion": "2.0.0",
+  "version": "0.0.1"
+}
