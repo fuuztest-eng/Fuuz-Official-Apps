@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "app-components/dataFlows/btc-ingest@0.0.10.json",
+      "sha256": "e8b9a3d6c84917df8f68e522df13470ea1c399da108ab74f3022ebdc6a1d9f46"
+    },
+    {
+      "path": "collections/ModuleGroup/system.json",
+      "sha256": "52716c8c583c304b09afe371f139ce9eaa802e496c2461a9483c2976777b5f70"
+    },
+    {
+      "path": "collections/Module/testing.json",
+      "sha256": "16c022a79a871f8c8468c4463bd212414e6cd0fa4436b78fb51d9161bf2e067b"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "8e15008ed81c099078b63c80a06dd99baafdbbe2225a0f0a6b44b977052fca25"
+    },
+    {
+      "path": "definition.json",
+      "sha256": "331f64aa2c122efb1a275419a4db2fb12174bfc4d82c4cf981c21d130650bac4"
+    }
+  ]
+}

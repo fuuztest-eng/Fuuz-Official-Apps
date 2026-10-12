@@ -1,0 +1,612 @@
+{
+  "header": {
+    "_customFields": {
+      "_externalId": null
+    },
+    "active": true,
+    "dataFlowTypeId": "Edge",
+    "description": "",
+    "id": "btcIngest",
+    "logLevelId": "Info",
+    "mcpToolConfiguration": null,
+    "moduleId": "testing",
+    "name": "BTC Ingest",
+    "substitutesDataFlowId": null
+  },
+  "version": {
+    "dataFlowId": "btcIngest",
+    "description": "",
+    "diagram": {
+      "gridSize": 5,
+      "id": "cms6i7y8m0101077562432r7o",
+      "layers": [
+        {
+          "id": "3f65567a-831d-4408-b85f-8cac4ca483a1",
+          "isSvg": true,
+          "models": {
+            "1d7a9cb1-ea64-4e36-bb73-16fb930aeb52": {
+              "curvyness": 50,
+              "id": "1d7a9cb1-ea64-4e36-bb73-16fb930aeb52",
+              "labels": [],
+              "points": [
+                {
+                  "id": "7c362d28-b906-4e71-9a02-16893ef25eaa",
+                  "type": "point",
+                  "x": 469,
+                  "y": 414.73
+                },
+                {
+                  "id": "d937269b-24cc-4b5f-8f99-090abd67ea41",
+                  "type": "point",
+                  "x": 560,
+                  "y": 424.73
+                }
+              ],
+              "selected": false,
+              "source": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+              "sourcePort": "cms6esvnp002r356somon5xfw",
+              "target": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+              "targetPort": "cms6i3sqe011h356srwylqut3",
+              "type": "default",
+              "width": 3
+            },
+            "f64028a9-e421-4703-b4e9-6930929b8367": {
+              "curvyness": 50,
+              "id": "f64028a9-e421-4703-b4e9-6930929b8367",
+              "labels": [],
+              "points": [
+                {
+                  "id": "5ef3abd3-5e34-4308-9b41-411a8122bd8a",
+                  "type": "point",
+                  "x": 220,
+                  "y": 414.44
+                },
+                {
+                  "id": "efecaa2f-579c-43a9-ac91-000ae5044f46",
+                  "type": "point",
+                  "x": 315,
+                  "y": 414.73
+                }
+              ],
+              "selected": false,
+              "source": "8f717535-53de-4f71-b9c2-28f1cfd19b44",
+              "sourcePort": "cms55p2mo005u356s0nvl2q58",
+              "target": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+              "targetPort": "cms6esvnp002p356sblim6ylm",
+              "type": "default",
+              "width": 3
+            }
+          },
+          "transformed": true,
+          "type": "diagram-links"
+        },
+        {
+          "id": "637a675e-6395-4f21-a4a5-4bba35eb1563",
+          "isSvg": false,
+          "models": {
+            "066cba0b-ed25-4e68-aeb6-fa46c866e69d": {
+              "data": {
+                "includeContext": false,
+                "includePayload": true,
+                "level": "Error",
+                "messageTransform": "\"Ingestion Error\"",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "066cba0b-ed25-4e68-aeb6-fa46c866e69d",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Log Error",
+              "ports": [
+                {
+                  "id": "cms6i4clz0120356syy90fdtb",
+                  "in": true,
+                  "links": [],
+                  "name": "cms6i4clz0121356segm6t6m9",
+                  "parentNode": "066cba0b-ed25-4e68-aeb6-fa46c866e69d",
+                  "type": "default",
+                  "x": 827,
+                  "y": 406.73
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms6i4clz0122356sd2lbopit",
+                  "in": false,
+                  "links": [],
+                  "name": "cms6i4clz0123356ssznd4h3f",
+                  "parentNode": "066cba0b-ed25-4e68-aeb6-fa46c866e69d",
+                  "type": "default",
+                  "x": 981,
+                  "y": 406.73
+                }
+              ],
+              "selected": false,
+              "type": "log",
+              "x": 835,
+              "y": 375
+            },
+            "33345b5a-7eac-41b9-9c52-9a2c6f8d668e": {
+              "data": {
+                "nextNodes": [
+                  "bbe56531-1db7-42e1-9851-6efe865bb1ed"
+                ],
+                "transform": "(\r\n\t/* buildPoints(topic, tx) -> TimeseriesPoint[] */\r\n\t$buildPoints := function(\r\n\t\t$topic,\r\n\t\t$tx\r\n\t) {\r\n\t\t(\r\n\t\t\t$ts := $tx.time * 1000;\r\n\t\t\t/* unix seconds -> ms, matches precision: 'ms' */\r\n\t\t\t$ingest := $millis() * 1000;\r\n\t\t\t/* TIMESTAMP columns read integer fields as MICROseconds */\r\n\t\t\t$outs := [$tx.out];\r\n\t\t\t/* [] wraps: missing -> empty array, array stays flat */\r\n\t\t\t$append(\r\n\t\t\t\t[\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"measurement\": \"btc_tx\",\r\n\t\t\t\t\t\t\"tags\": { \"topic\": $topic },\r\n\t\t\t\t\t\t\"fields\": {\r\n\t\t\t\t\t\t\t\"tx_index\": $tx.tx_index,\r\n\t\t\t\t\t\t\t\"out_count\": $count($outs),\r\n\t\t\t\t\t\t\t/* [$outs.value, 0] drops undefineds and guarantees $sum() gets >=1 number */\r\n\t\t\t\t\t\t\t\"out_value_sats\": $sum([$outs.value, 0]),\r\n\t\t\t\t\t\t\t\"ingest_ts\": $ingest\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"timestamp\": $ts\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t$outs\r\n\t\t\t\t\t.{\r\n\t\t\t\t\t\t\"measurement\": \"btc_tx_out\",\r\n\t\t\t\t\t\t\"tags\": {\r\n\t\t\t\t\t\t\t\"topic\": $topic,\r\n\t\t\t\t\t\t\t\"out_type\": $exists(type) ? $string(type) : \"\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t/* fields is string|number|boolean — no nulls. $merge omits absent keys\r\n           instead; QuestDB leaves the column NULL. */\r\n\t\t\t\t\t\t\"fields\": $merge([\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"tx_index\": $tx.tx_index,\r\n\t\t\t\t\t\t\t\t\"n\": n,\r\n\t\t\t\t\t\t\t\t\"value_sats\": value ? value : 0,\r\n\t\t\t\t\t\t\t\t\"spent\": spent ? true : false,\r\n\t\t\t\t\t\t\t\t\"ingest_ts\": $ingest\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\taddr ? { \"addr\": addr } : {},\r\n\t\t\t\t\t\t\tscript ? { \"script\": script } : {}\r\n\t\t\t\t\t\t]),\r\n\t\t\t\t\t\t\"timestamp\": $tsW\r\n\t\t\t\t\t}\r\n\t\t\t)\r\n\t\t)\r\n\t};\r\n\t$params := {\r\n\t\t\"points\": $buildPoints($.value.topic, $.value.parsedValue),\r\n\t\t\"precision\": \"ms\",\r\n\t\t\"flush\": true\r\n\t};\r\n\t$req := {\r\n\t\t\"deviceId\": \"cms50o8tl00k907755kgucq0n\",\r\n\t\t\"functionId\": \"timeseriesWrite\",\r\n\t\t\"request\": $params\r\n\t};\r\n\r\n  $result := $executeDeviceFunction($req);\r\n  $err := $result.error;\r\n  $response := $result.response;\r\n\r\n  {\r\n    \"response\": $result.response,\r\n    \"error\": $result.error\r\n  }\r\n)"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "JSONata",
+              "ports": [
+                {
+                  "id": "cms6esvnp002p356sblim6ylm",
+                  "in": true,
+                  "links": [
+                    "f64028a9-e421-4703-b4e9-6930929b8367"
+                  ],
+                  "name": "cms6esvnp002q356spa99xmeo",
+                  "parentNode": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+                  "type": "default",
+                  "x": 307,
+                  "y": 406.73
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms6esvnp002r356somon5xfw",
+                  "in": false,
+                  "links": [
+                    "1d7a9cb1-ea64-4e36-bb73-16fb930aeb52"
+                  ],
+                  "name": "cms6esvnp002s356sph0siif8",
+                  "parentNode": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+                  "type": "default",
+                  "x": 461,
+                  "y": 406.73
+                }
+              ],
+              "selected": false,
+              "type": "transform",
+              "x": 315,
+              "y": 375
+            },
+            "52eec127-fd33-492a-8a1d-a3e54881a402": {
+              "data": {
+                "includeContext": false,
+                "includePayload": true,
+                "level": "Info",
+                "messageTransform": "\"Ingested Data\"",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "52eec127-fd33-492a-8a1d-a3e54881a402",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Log success",
+              "ports": [
+                {
+                  "id": "cms6i4vn20138356s7spi8bgu",
+                  "in": true,
+                  "links": [],
+                  "name": "cms6i4vn20139356sldckocyi",
+                  "parentNode": "52eec127-fd33-492a-8a1d-a3e54881a402",
+                  "type": "default",
+                  "x": 832,
+                  "y": 491.73
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms6i4vn2013a356so0qtowfh",
+                  "in": false,
+                  "links": [],
+                  "name": "cms6i4vn2013b356s7pxwjetl",
+                  "parentNode": "52eec127-fd33-492a-8a1d-a3e54881a402",
+                  "type": "default",
+                  "x": 986,
+                  "y": 491.73
+                }
+              ],
+              "selected": false,
+              "type": "log",
+              "x": 840,
+              "y": 460
+            },
+            "8f717535-53de-4f71-b9c2-28f1cfd19b44": {
+              "data": {
+                "device": {
+                  "id": "cms50wv7c00la07750xal4r1x",
+                  "label": "Docker MQTT",
+                  "name": "Docker MQTT"
+                },
+                "deviceDriverType": {
+                  "id": "mqtt",
+                  "label": "MQTT",
+                  "name": "MQTT"
+                },
+                "deviceGateway": {
+                  "id": "mfgx-native-app-device-gateway-server",
+                  "label": "mfgx-native-app-device-gateway-server",
+                  "name": "mfgx-native-app-device-gateway-server"
+                },
+                "deviceSubscription": {
+                  "deviceGatewayDevice": {
+                    "device": {
+                      "deviceDriver": {
+                        "deviceDriverType": {
+                          "id": "mqtt",
+                          "label": "MQTT",
+                          "name": "MQTT"
+                        },
+                        "id": "mqttClient",
+                        "label": "MQTT Client",
+                        "name": "MQTT Client"
+                      },
+                      "id": "cms50wv7c00la07750xal4r1x",
+                      "label": "Docker MQTT",
+                      "name": "Docker MQTT"
+                    },
+                    "deviceGateway": {
+                      "id": "mfgx-native-app-device-gateway-server",
+                      "label": "mfgx-native-app-device-gateway-server",
+                      "name": "mfgx-native-app-device-gateway-server"
+                    }
+                  },
+                  "deviceSubscriptionType": {
+                    "id": "mqttTopics",
+                    "label": "MQTT Topics"
+                  },
+                  "fullyQualifiedTopicName": "mfgx.tenant.localDevelopment.deviceSubscription.mqtt.mqttClient.cms50wv7c00la07750xal4r1x.mfgx-native-app-device-gateway-server.mqttTopics.btcUnconfirmedTx",
+                  "id": "btcUnconfirmedTx",
+                  "label": "BTC Unconfirmed TX",
+                  "name": "BTC Unconfirmed TX"
+                },
+                "deviceSubscriptionType": {
+                  "id": "mqttTopics",
+                  "label": "MQTT Topics"
+                },
+                "driver": {
+                  "id": "mqttClient",
+                  "label": "MQTT Client",
+                  "name": "MQTT Client"
+                },
+                "nextNodes": [
+                  "33345b5a-7eac-41b9-9c52-9a2c6f8d668e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "8f717535-53de-4f71-b9c2-28f1cfd19b44",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Device Subscription",
+              "ports": [
+                {
+                  "fieldLabel": "Message",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms55p2mo005u356s0nvl2q58",
+                  "in": false,
+                  "links": [
+                    "f64028a9-e421-4703-b4e9-6930929b8367"
+                  ],
+                  "name": "cms55p2mo005v356s9fumipbm",
+                  "parentNode": "8f717535-53de-4f71-b9c2-28f1cfd19b44",
+                  "type": "default",
+                  "x": 212,
+                  "y": 406.44
+                }
+              ],
+              "selected": false,
+              "type": "deviceSubscription",
+              "x": 66,
+              "y": 374.71
+            },
+            "bbe56531-1db7-42e1-9851-6efe865bb1ed": {
+              "data": {
+                "onFalseNextNodes": [],
+                "onTrueNextNodes": [],
+                "transform": "$.error"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "If Else",
+              "ports": [
+                {
+                  "id": "cms6i3sqe011h356srwylqut3",
+                  "in": true,
+                  "links": [
+                    "1d7a9cb1-ea64-4e36-bb73-16fb930aeb52"
+                  ],
+                  "name": "cms6i3sqe011i356sr9t0g8ub",
+                  "parentNode": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+                  "type": "default",
+                  "x": 552,
+                  "y": 416.73
+                },
+                {
+                  "fieldLabel": "True",
+                  "fieldPath": "data.onTrueNextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms6i3sqe011j356sy8uxoziv",
+                  "in": false,
+                  "links": [],
+                  "name": "cms6i3sqe011k356s72h35a0h",
+                  "parentNode": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+                  "type": "default",
+                  "x": 706,
+                  "y": 416.73
+                },
+                {
+                  "fieldLabel": "False",
+                  "fieldPath": "data.onFalseNextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cms6i3sqe011l356sb83rlhn8",
+                  "in": false,
+                  "links": [],
+                  "name": "cms6i3sqe011m356sb7yzglj5",
+                  "parentNode": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+                  "type": "default",
+                  "x": 706,
+                  "y": 441.89
+                }
+              ],
+              "selected": false,
+              "type": "ifElse",
+              "x": 560,
+              "y": 385
+            }
+          },
+          "transformed": true,
+          "type": "diagram-nodes"
+        }
+      ],
+      "name": "BTC Ingest",
+      "offsetX": -197,
+      "offsetY": -154,
+      "type": "Edge",
+      "version": "0.0.10",
+      "walkthrough": {
+        "steps": []
+      },
+      "zoom": 100
+    },
+    "flow": {
+      "id": "cms6i7y8m0101077562432r7o",
+      "name": "BTC Ingest",
+      "nodes": [
+        {
+          "data": {
+            "device": {
+              "id": "cms50wv7c00la07750xal4r1x",
+              "label": "Docker MQTT",
+              "name": "Docker MQTT"
+            },
+            "deviceDriverType": {
+              "id": "mqtt",
+              "label": "MQTT",
+              "name": "MQTT"
+            },
+            "deviceGateway": {
+              "id": "mfgx-native-app-device-gateway-server",
+              "label": "mfgx-native-app-device-gateway-server",
+              "name": "mfgx-native-app-device-gateway-server"
+            },
+            "deviceSubscription": {
+              "deviceGatewayDevice": {
+                "device": {
+                  "deviceDriver": {
+                    "deviceDriverType": {
+                      "id": "mqtt",
+                      "label": "MQTT",
+                      "name": "MQTT"
+                    },
+                    "id": "mqttClient",
+                    "label": "MQTT Client",
+                    "name": "MQTT Client"
+                  },
+                  "id": "cms50wv7c00la07750xal4r1x",
+                  "label": "Docker MQTT",
+                  "name": "Docker MQTT"
+                },
+                "deviceGateway": {
+                  "id": "mfgx-native-app-device-gateway-server",
+                  "label": "mfgx-native-app-device-gateway-server",
+                  "name": "mfgx-native-app-device-gateway-server"
+                }
+              },
+              "deviceSubscriptionType": {
+                "id": "mqttTopics",
+                "label": "MQTT Topics"
+              },
+              "fullyQualifiedTopicName": "mfgx.tenant.localDevelopment.deviceSubscription.mqtt.mqttClient.cms50wv7c00la07750xal4r1x.mfgx-native-app-device-gateway-server.mqttTopics.btcUnconfirmedTx",
+              "id": "btcUnconfirmedTx",
+              "label": "BTC Unconfirmed TX",
+              "name": "BTC Unconfirmed TX"
+            },
+            "deviceSubscriptionType": {
+              "id": "mqttTopics",
+              "label": "MQTT Topics"
+            },
+            "driver": {
+              "id": "mqttClient",
+              "label": "MQTT Client",
+              "name": "MQTT Client"
+            },
+            "nextNodes": [
+              "33345b5a-7eac-41b9-9c52-9a2c6f8d668e"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "8f717535-53de-4f71-b9c2-28f1cfd19b44",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Device Subscription",
+          "type": "deviceSubscription"
+        },
+        {
+          "data": {
+            "nextNodes": [
+              "bbe56531-1db7-42e1-9851-6efe865bb1ed"
+            ],
+            "transform": "(\r\n\t/* buildPoints(topic, tx) -> TimeseriesPoint[] */\r\n\t$buildPoints := function(\r\n\t\t$topic,\r\n\t\t$tx\r\n\t) {\r\n\t\t(\r\n\t\t\t$ts := $tx.time * 1000;\r\n\t\t\t/* unix seconds -> ms, matches precision: 'ms' */\r\n\t\t\t$ingest := $millis() * 1000;\r\n\t\t\t/* TIMESTAMP columns read integer fields as MICROseconds */\r\n\t\t\t$outs := [$tx.out];\r\n\t\t\t/* [] wraps: missing -> empty array, array stays flat */\r\n\t\t\t$append(\r\n\t\t\t\t[\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"measurement\": \"btc_tx\",\r\n\t\t\t\t\t\t\"tags\": { \"topic\": $topic },\r\n\t\t\t\t\t\t\"fields\": {\r\n\t\t\t\t\t\t\t\"tx_index\": $tx.tx_index,\r\n\t\t\t\t\t\t\t\"out_count\": $count($outs),\r\n\t\t\t\t\t\t\t/* [$outs.value, 0] drops undefineds and guarantees $sum() gets >=1 number */\r\n\t\t\t\t\t\t\t\"out_value_sats\": $sum([$outs.value, 0]),\r\n\t\t\t\t\t\t\t\"ingest_ts\": $ingest\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"timestamp\": $ts\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t$outs\r\n\t\t\t\t\t.{\r\n\t\t\t\t\t\t\"measurement\": \"btc_tx_out\",\r\n\t\t\t\t\t\t\"tags\": {\r\n\t\t\t\t\t\t\t\"topic\": $topic,\r\n\t\t\t\t\t\t\t\"out_type\": $exists(type) ? $string(type) : \"\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t/* fields is string|number|boolean — no nulls. $merge omits absent keys\r\n           instead; QuestDB leaves the column NULL. */\r\n\t\t\t\t\t\t\"fields\": $merge([\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"tx_index\": $tx.tx_index,\r\n\t\t\t\t\t\t\t\t\"n\": n,\r\n\t\t\t\t\t\t\t\t\"value_sats\": value ? value : 0,\r\n\t\t\t\t\t\t\t\t\"spent\": spent ? true : false,\r\n\t\t\t\t\t\t\t\t\"ingest_ts\": $ingest\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\taddr ? { \"addr\": addr } : {},\r\n\t\t\t\t\t\t\tscript ? { \"script\": script } : {}\r\n\t\t\t\t\t\t]),\r\n\t\t\t\t\t\t\"timestamp\": $tsW\r\n\t\t\t\t\t}\r\n\t\t\t)\r\n\t\t)\r\n\t};\r\n\t$params := {\r\n\t\t\"points\": $buildPoints($.value.topic, $.value.parsedValue),\r\n\t\t\"precision\": \"ms\",\r\n\t\t\"flush\": true\r\n\t};\r\n\t$req := {\r\n\t\t\"deviceId\": \"cms50o8tl00k907755kgucq0n\",\r\n\t\t\"functionId\": \"timeseriesWrite\",\r\n\t\t\"request\": $params\r\n\t};\r\n\r\n  $result := $executeDeviceFunction($req);\r\n  $err := $result.error;\r\n  $response := $result.response;\r\n\r\n  {\r\n    \"response\": $result.response,\r\n    \"error\": $result.error\r\n  }\r\n)"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "33345b5a-7eac-41b9-9c52-9a2c6f8d668e",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "JSONata",
+          "type": "transform"
+        },
+        {
+          "data": {
+            "onFalseNextNodes": [],
+            "onTrueNextNodes": [],
+            "transform": "$.error"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "bbe56531-1db7-42e1-9851-6efe865bb1ed",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "If Else",
+          "type": "ifElse"
+        },
+        {
+          "data": {
+            "includeContext": false,
+            "includePayload": true,
+            "level": "Error",
+            "messageTransform": "\"Ingestion Error\"",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "066cba0b-ed25-4e68-aeb6-fa46c866e69d",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Log Error",
+          "type": "log"
+        },
+        {
+          "data": {
+            "includeContext": false,
+            "includePayload": true,
+            "level": "Info",
+            "messageTransform": "\"Ingested Data\"",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "52eec127-fd33-492a-8a1d-a3e54881a402",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Log success",
+          "type": "log"
+        }
+      ],
+      "type": "Edge",
+      "version": "0.0.10"
+    },
+    "id": "cms6i7y8m0101077562432r7o",
+    "number": "0.0.10"
+  }
+}
