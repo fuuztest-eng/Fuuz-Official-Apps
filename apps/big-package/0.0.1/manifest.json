@@ -1,0 +1,52 @@
+{
+  "applicationPublisherId": null,
+  "assets": [],
+  "catalog": {
+    "assetName": "big-package-0.0.1.fuuz",
+    "category": "Miscellaneous",
+    "description": "",
+    "id": "big-package",
+    "name": "Big Package",
+    "publisher": "fuuztest-eng",
+    "releaseTag": "big-package@0.0.1",
+    "sha256": "ef0d71b45ed6add4ddc15e32b6fcb03ca9faf2846c1ddac0fe40b805b35d299e",
+    "tags": [],
+    "type": "application",
+    "version": "0.0.1"
+  },
+  "collections": [
+    {
+      "api": "application",
+      "modelName": "ModuleGroup"
+    },
+    {
+      "api": "application",
+      "modelName": "Module"
+    }
+  ],
+  "components": {
+    "dataFlows": [
+      "btc-ingest@0.0.10",
+      "fuuz-connector-test@0.0.1"
+    ],
+    "dataModels": [
+      "secretstest@12"
+    ],
+    "screens": [
+      "scheduler-configuration-complex-distribution@0.0.4"
+    ]
+  },
+  "dependencies": {},
+  "enterpriseId": "local",
+  "environmentId": "build",
+  "name": "Big Package",
+  "platformVersion": "2026.9.1",
+  "repoLayoutVersion": 1,
+  "requiredSecrets": [],
+  "source": {
+    "ref": "main",
+    "repo": "fuuztest-eng/Fuuz-Official-Apps"
+  },
+  "specVersion": "2.0.0",
+  "version": "0.0.1"
+}
