@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "path": "app-components/dataModels/secretstest@12.json",
+      "sha256": "58b4dabbebf4eceedf69d4ed4f976ec1dd8d60ec47ddf74c0df3baae8152e4ba"
+    },
+    {
+      "path": "app-components/dataFlows/btc-ingest@0.0.10.json",
+      "sha256": "e8b9a3d6c84917df8f68e522df13470ea1c399da108ab74f3022ebdc6a1d9f46"
+    },
+    {
+      "path": "app-components/dataFlows/fuuz-connector-test@0.0.1.json",
+      "sha256": "5a8e890e23c52d101ac67d01d22a06afe051fef78b6d30aa9b0c93f3fd2cbc70"
+    },
+    {
+      "path": "app-components/screens/scheduler-configuration-complex-distribution@0.0.4.json",
+      "sha256": "f2d19ef35a20df9841f209c8d678445d42188cea6223141346924f3ef4861d41"
+    },
+    {
+      "path": "collections/ModuleGroup/system.json",
+      "sha256": "52716c8c583c304b09afe371f139ce9eaa802e496c2461a9483c2976777b5f70"
+    },
+    {
+      "path": "collections/Module/testing.json",
+      "sha256": "16c022a79a871f8c8468c4463bd212414e6cd0fa4436b78fb51d9161bf2e067b"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "4189e699986d7278cfeabaeda8e4772b3d35951bf7279cbe3ab96cc8a2c5211c"
+    },
+    {
+      "path": "definition.json",
+      "sha256": "b8312914f1cdc44007ac01d081ff3e9684d9da2ee47f9d5b951d4250f7324ca2"
+    }
+  ]
+}
