@@ -1,0 +1,45 @@
+{
+  "applicationPublisherId": null,
+  "assets": [],
+  "catalog": {
+    "assetName": "crazy-application-0.0.1.fuuz",
+    "category": "Miscellaneous",
+    "description": "",
+    "id": "com.fuuztest-eng.crazy-application",
+    "name": "Crazy Application",
+    "publisher": "fuuztest-eng",
+    "releaseTag": "com.fuuztest-eng.crazy-application@0.0.1",
+    "sha256": "f2f9396b42cd82c92c8d84871bb2fe316361703d004e5782a18df1142377acc4",
+    "tags": [],
+    "type": "application",
+    "version": "0.0.1"
+  },
+  "collections": [
+    {
+      "api": "application",
+      "modelName": "ModuleGroup"
+    },
+    {
+      "api": "application",
+      "modelName": "Module"
+    }
+  ],
+  "components": {
+    "dataFlows": [
+      "btc-ingest@0.0.10"
+    ]
+  },
+  "dependencies": {},
+  "enterpriseId": "local",
+  "environmentId": "build",
+  "name": "Crazy Application",
+  "platformVersion": "2026.9.1",
+  "repoLayoutVersion": 1,
+  "requiredSecrets": [],
+  "source": {
+    "ref": "main",
+    "repo": "fuuztest-eng/Fuuz-Official-Apps"
+  },
+  "specVersion": "2.0.0",
+  "version": "0.0.1"
+}
