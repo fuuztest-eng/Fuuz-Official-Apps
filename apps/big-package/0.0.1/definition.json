@@ -1,0 +1,257 @@
+{
+  "packageDefinition": {
+    "name": "Big Package"
+  },
+  "packageDefinitionSelections": [
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "substitutesDataFlowId"
+        },
+        {
+          "name": "dataFlowTypeId"
+        },
+        {
+          "name": "logLevelId"
+        },
+        {
+          "name": "mcpToolConfiguration.enabled"
+        },
+        {
+          "name": "mcpToolConfiguration.inputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.outputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.readOnly"
+        },
+        {
+          "name": "mcpToolConfiguration.destructive"
+        },
+        {
+          "name": "mcpToolConfiguration.idempotent"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv843xua001i356u4jy9kl28",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ]
+      },
+      "modelName": "DataFlow",
+      "packageDefinitionVersionId": "cmv843xm8001h356ukb62v27t",
+      "selected": [
+        {
+          "id": "btcIngest",
+          "label": "BTC Ingest"
+        },
+        {
+          "id": "fuuzConnectorTest",
+          "label": "Fuuz Connector Test"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "dataModelKindId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv843xua001j356uainoyb7e",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ]
+      },
+      "modelName": "DataModel",
+      "packageDefinitionVersionId": "cmv843xm8001h356ukb62v27t",
+      "selected": [
+        {
+          "id": "secretsTest",
+          "label": "SecretsTest"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "edgeScreen"
+        },
+        {
+          "name": "forceFullscreen"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "substitutesScreenId"
+        },
+        {
+          "name": "isWidget"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv843xua001k356uq2elvdrf",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ]
+      },
+      "modelName": "Screen",
+      "packageDefinitionVersionId": "cmv843xm8001h356ukb62v27t",
+      "selected": [
+        {
+          "id": "schedulerConfigurationComplexDistribution",
+          "label": "Scheduler Configuration Complex Distribution"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "moduleGroupId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv843xua001l356ucua3lmxu",
+      "metadata": {
+        "labelField": "name"
+      },
+      "modelName": "Module",
+      "packageDefinitionVersionId": "cmv843xm8001h356ukb62v27t",
+      "selected": [
+        {
+          "id": "testing",
+          "label": "Testing"
+        }
+      ]
+    },
+    {
+      "api": "application",
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "icon"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "id": "cmv843xua001m356utl53gmjr",
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": []
+      },
+      "modelName": "ModuleGroup",
+      "packageDefinitionVersionId": "cmv843xm8001h356ukb62v27t",
+      "selected": [
+        {
+          "id": "system",
+          "label": "System"
+        }
+      ]
+    }
+  ],
+  "packageDefinitionVersion": {
+    "exportedFileId": null,
+    "id": "cmv843xm8001h356ukb62v27t",
+    "packageDefinitionId": "bigPackage",
+    "version": "0.0.1"
+  }
+}
