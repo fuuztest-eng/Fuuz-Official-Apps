@@ -1,9 +1,0 @@
-{
-  "_customFields": {
-    "_externalId": null
-  },
-  "description": "Features and functionality related to testing the Fuuz platform and apps.",
-  "id": "testing",
-  "moduleGroupId": "system",
-  "name": "Testing"
-}

@@ -1,9 +1,0 @@
-{
-  "_customFields": {
-    "_externalId": null
-  },
-  "description": "Funcitonality that affects behavior system-wide, such as access control, integration, and business intelligence.",
-  "icon": "cog",
-  "id": "system",
-  "name": "System"
-}
