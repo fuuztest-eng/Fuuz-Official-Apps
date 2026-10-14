@@ -1,0 +1,331 @@
+{
+  "header": {
+    "_customFields": {
+      "_externalId": null
+    },
+    "active": true,
+    "dataFlowTypeId": "Integration",
+    "description": "",
+    "id": "fuuzConnectorTest",
+    "logLevelId": "Trace",
+    "mcpToolConfiguration": null,
+    "moduleId": "testing",
+    "name": "Fuuz Connector Test",
+    "substitutesDataFlowId": null
+  },
+  "version": {
+    "dataFlowId": "fuuzConnectorTest",
+    "description": "",
+    "diagram": {
+      "gridSize": 5,
+      "id": "cmcdsqu9e022e07751rrbft8b",
+      "layers": [
+        {
+          "id": "0dcc766e-8440-4b3c-8f2a-0bd2797d2f7c",
+          "isSvg": true,
+          "models": {
+            "3d36ddf8-2bea-4b4a-97bf-456eb49f4c82": {
+              "curvyness": 50,
+              "id": "3d36ddf8-2bea-4b4a-97bf-456eb49f4c82",
+              "labels": [],
+              "points": [
+                {
+                  "id": "55bec374-77ea-4d61-a74d-12e9e04a2712",
+                  "type": "point",
+                  "x": 529,
+                  "y": 209.73
+                },
+                {
+                  "id": "f4ed519e-1e6e-462e-a10a-11c4bbb962b9",
+                  "type": "point",
+                  "x": 595,
+                  "y": 209.73
+                }
+              ],
+              "selected": false,
+              "source": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+              "sourcePort": "cmcdsokbg001h356mttfnsejr",
+              "target": "8f374c59-8e04-4275-bbc5-833334a96c84",
+              "targetPort": "cmcdsofjz0019356mrxkwwfzp",
+              "type": "default",
+              "width": 3
+            },
+            "a3d5a29c-45e6-4d82-9358-d78ff3ab300f": {
+              "curvyness": 50,
+              "id": "a3d5a29c-45e6-4d82-9358-d78ff3ab300f",
+              "labels": [],
+              "points": [
+                {
+                  "id": "c3a6077c-98c1-4d37-8917-1ae0b5acc308",
+                  "type": "point",
+                  "x": 319,
+                  "y": 209.73
+                },
+                {
+                  "id": "8afaa3d8-151a-4dde-b12f-28d9b07d63d3",
+                  "type": "point",
+                  "x": 375,
+                  "y": 209.73
+                }
+              ],
+              "selected": false,
+              "source": "2a3eec81-9a6d-4548-95eb-913fb488bedd",
+              "sourcePort": "cmcdsocke0015356mw5xsufzw",
+              "target": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+              "targetPort": "cmcdsokbg001f356m6j0y6qqx",
+              "type": "default",
+              "width": 3
+            }
+          },
+          "transformed": true,
+          "type": "diagram-links"
+        },
+        {
+          "id": "68150eb0-f339-4653-88c8-3a512aebfb83",
+          "isSvg": false,
+          "models": {
+            "2a3eec81-9a6d-4548-95eb-913fb488bedd": {
+              "data": {
+                "nextNodes": [
+                  "e028fd9f-619f-4bad-911c-7f64a40e673a"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "2a3eec81-9a6d-4548-95eb-913fb488bedd",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Request",
+              "ports": [
+                {
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmcdsocke0015356mw5xsufzw",
+                  "in": false,
+                  "links": [
+                    "a3d5a29c-45e6-4d82-9358-d78ff3ab300f"
+                  ],
+                  "name": "cmcdsocke0016356m9pcpv98o",
+                  "parentNode": "2a3eec81-9a6d-4548-95eb-913fb488bedd",
+                  "type": "default",
+                  "x": 311,
+                  "y": 201.73
+                }
+              ],
+              "selected": false,
+              "type": "request",
+              "x": 165,
+              "y": 170
+            },
+            "8f374c59-8e04-4275-bbc5-833334a96c84": {
+              "data": {
+                "nextNodes": [],
+                "responseTransform": "$"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "8f374c59-8e04-4275-bbc5-833334a96c84",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "Response",
+              "ports": [
+                {
+                  "fieldLabel": "Response",
+                  "id": "cmcdsofjz0019356mrxkwwfzp",
+                  "in": true,
+                  "links": [
+                    "3d36ddf8-2bea-4b4a-97bf-456eb49f4c82"
+                  ],
+                  "name": "cmcdsofjz001a356m42kwmcap",
+                  "parentNode": "8f374c59-8e04-4275-bbc5-833334a96c84",
+                  "type": "default",
+                  "x": 587,
+                  "y": 201.73
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmcdsofjz001b356mqkgcxx6j",
+                  "in": false,
+                  "links": [],
+                  "name": "cmcdsofjz001c356mvf3pu3y5",
+                  "parentNode": "8f374c59-8e04-4275-bbc5-833334a96c84",
+                  "type": "default",
+                  "x": 740.98,
+                  "y": 201.73
+                }
+              ],
+              "selected": false,
+              "type": "response",
+              "x": 595,
+              "y": 170
+            },
+            "e028fd9f-619f-4bad-911c-7f64a40e673a": {
+              "data": {
+                "nextNodes": [
+                  "8f374c59-8e04-4275-bbc5-833334a96c84"
+                ],
+                "transform": "{\r\n  \"basicApiResponse\":\"Hello World\",\r\n  \"echo\":$\r\n}"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "id": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+              "logging": {
+                "enableTraceLogging": false,
+                "executionFailed": true,
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false
+              },
+              "name": "JSONata",
+              "ports": [
+                {
+                  "id": "cmcdsokbg001f356m6j0y6qqx",
+                  "in": true,
+                  "links": [
+                    "a3d5a29c-45e6-4d82-9358-d78ff3ab300f"
+                  ],
+                  "name": "cmcdsokbg001g356mkrc7wtm1",
+                  "parentNode": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+                  "type": "default",
+                  "x": 367,
+                  "y": 201.73
+                },
+                {
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes",
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "id": "cmcdsokbg001h356mttfnsejr",
+                  "in": false,
+                  "links": [
+                    "3d36ddf8-2bea-4b4a-97bf-456eb49f4c82"
+                  ],
+                  "name": "cmcdsokbg001i356mhy1oey24",
+                  "parentNode": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+                  "type": "default",
+                  "x": 521,
+                  "y": 201.73
+                }
+              ],
+              "selected": true,
+              "type": "transform",
+              "x": 375,
+              "y": 170
+            }
+          },
+          "transformed": true,
+          "type": "diagram-nodes"
+        }
+      ],
+      "name": "Fuuz Connector Test",
+      "offsetX": 0,
+      "offsetY": 0,
+      "type": "Integration",
+      "version": "0.0.1",
+      "walkthrough": {
+        "steps": []
+      },
+      "zoom": 100
+    },
+    "flow": {
+      "id": "cmcdsqu9e022e07751rrbft8b",
+      "name": "Fuuz Connector Test",
+      "nodes": [
+        {
+          "data": {
+            "nextNodes": [
+              "e028fd9f-619f-4bad-911c-7f64a40e673a"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "2a3eec81-9a6d-4548-95eb-913fb488bedd",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Request",
+          "type": "request"
+        },
+        {
+          "data": {
+            "nextNodes": [],
+            "responseTransform": "$"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "8f374c59-8e04-4275-bbc5-833334a96c84",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "Response",
+          "type": "response"
+        },
+        {
+          "data": {
+            "nextNodes": [
+              "8f374c59-8e04-4275-bbc5-833334a96c84"
+            ],
+            "transform": "{\r\n  \"basicApiResponse\":\"Hello World\",\r\n  \"echo\":$\r\n}"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "id": "e028fd9f-619f-4bad-911c-7f64a40e673a",
+          "logging": {
+            "enableTraceLogging": false,
+            "executionFailed": true,
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false
+          },
+          "name": "JSONata",
+          "type": "transform"
+        }
+      ],
+      "type": "Integration",
+      "version": "0.0.1"
+    },
+    "id": "cmcdsqu9e022e07751rrbft8b",
+    "number": "0.0.1"
+  }
+}
